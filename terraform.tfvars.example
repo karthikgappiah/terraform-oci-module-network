@@ -1,0 +1,26 @@
+compartment_id = "ocid1.compartment.oc1..aaaaaaaaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+vcn_cidr_block   = "10.0.0.0/16"
+vcn_display_name = "prod-vcn"
+vcn_dns_label    = "prodvcn"
+
+public_subnet_cidr      = "10.0.0.0/24"
+public_subnet_dns_label = "pubsub"
+
+private_subnet_cidr      = "10.0.1.0/24"
+private_subnet_dns_label = "prisub"
+
+# TODO: Restrict SSH to your bastion or VPN egress IP — never 0.0.0.0/0 in production
+ssh_source_cidr = "203.0.113.0/32"
+
+# TODO: Set to true to drop all private subnet outbound internet traffic (maintenance windows)
+nat_gateway_block_traffic = false
+
+freeform_tags = {
+  environment = "production"
+  managed_by  = "terraform"
+}
+
+defined_tags = {
+  "Operations.CostCenter" = "14"
+}
