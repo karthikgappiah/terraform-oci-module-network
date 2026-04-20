@@ -1,0 +1,11 @@
+# PATH: ~/.gitignore
+
+# --- Terraform ---
+
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# --- Operating System ---
+
+.DS_Store
